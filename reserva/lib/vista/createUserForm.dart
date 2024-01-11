@@ -1,24 +1,6 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Crear Usuario'),
-        ),
-        body: CreateUserForm(),
-      ),
-    );
-  }
-}
+import 'package:reserva/modelo/userModel.dart'; 
+import 'package:reserva/controlador/userController.dart'; 
 
 class CreateUserForm extends StatefulWidget {
   @override
@@ -34,30 +16,46 @@ class _CreateUserFormState extends State<CreateUserForm> {
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  Future<void> _createUser() async {
+  void _createUser(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
-      final response = await http.post(
-        Uri.parse('http://192.168.1.12:80/prueba_flutter/rest/create_user.php'),
-        body: {
-          'nombre': nombreController.text,
-          'apellido': apellidoController.text,
-          'telefono': telefonoController.text,
-          'email': emailController.text,
-          'contrasena': contrasenaController.text,
-        },
+      UserModel user = UserModel(
+        nombre: nombreController.text,
+        apellido: apellidoController.text,
+        telefono: telefonoController.text,
+        email: emailController.text,
+        contrasena: contrasenaController.text,
       );
 
-      if (response.statusCode == 200) {
-        bool success = json.decode(response.body);
-        if (success) {
-          print('Usuario creado con éxito.');
-        } else {
-          print('Error al crear el usuario.');
-        }
+      UserController controller = UserController();
+      bool success = await controller.createUser(user);
+
+      if (success) {
+        _showAlert(context, 'Éxito', 'Usuario creado con éxito', Colors.green);
       } else {
-        print('Error en la solicitud al servidor.');
+        _showAlert(context, 'Error', 'Error al crear el usuario', Colors.red);
       }
     }
+  }
+
+  void _showAlert(BuildContext context, String title, String message, Color color) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(title),
+          content: Text(message),
+          backgroundColor: color,
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -126,7 +124,7 @@ class _CreateUserFormState extends State<CreateUserForm> {
             ),
             SizedBox(height: 16),
             ElevatedButton(
-              onPressed: _createUser,
+              onPressed: () => _createUser(context),
               child: Text('Crear Usuario'),
             ),
           ],
