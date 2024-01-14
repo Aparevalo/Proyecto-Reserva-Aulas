@@ -61,16 +61,10 @@ Estos servidores simplifican la configuración del entorno de desarrollo y facil
    ```php
    <?php
 
-   $servername = "tu_servidor_mysql";
-   $username = "tu_usuario_mysql";
-   $password = "tu_contraseña_mysql";
-   $database = "prueba_flutter";
-
-   $conn = new mysqli($servername, $username, $password, $database);
-
-   if ($conn->connect_error) {
-       die("Conexión fallida: " . $conn->connect_error);
-   }
+   define( 'DB_HOST', 'localhost' ); 
+   define( 'DB_USER', 'root' ); 
+   define( 'DB_PASS', '' );             
+   define( 'DB_NAME', 'prueba_flutter' );      
 
    ?>
    ```
