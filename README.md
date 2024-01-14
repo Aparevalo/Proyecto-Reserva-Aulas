@@ -10,7 +10,7 @@ Este proyecto es una aplicación Flutter para crear usuarios mediante una solici
 
 1. **Clonar el Repositorio**
    ```bash
-   git clone https://github.com/Aparevalo/Proyecto-Deteccion-Objetos.git
+   git clone https://github.com/Aparevalo/Proyecto-Reserva-Aulas.git
    ```
 
 2. **Instalar Dependencias**
