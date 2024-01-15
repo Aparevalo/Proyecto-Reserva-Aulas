@@ -1,11 +1,13 @@
-# Configuración en Flutter
+# Levantar el proyecto en Flutter
+
+## Configuraciones 
 
 1. **Instalar Dependencias**
    ```bash
    flutter pub get
    ```
 2. **Ajuste de la URL**
-    Asegúrate de tener un servidor PHP en tu máquina y ajusta la URL en los archivos [`createUserRest.dart`](lib/rest/createUserRest.dart), alojados en la carpeta [`lib/rest/`](lib/rest/)  a la dirección del servidor donde se encuentra el script PHP. Como se muestra a continuación:
+    Asegúrate de tener un servidor PHP en tu máquina y ajusta la URL en los archivos [`createUserRest.dart`](lib/rest/createUserRest.dart) y [`loginRest.dart`](lib/rest/loginRest.dart), alojados en la carpeta [`lib/rest/`](lib/rest/)  a la dirección del servidor donde se encuentra el script PHP. Como se muestra a continuación:
 
 ```dart
 Uri.parse('http://tu_direccion_ip:puerto/ruta/rest/create_user.php')
@@ -16,8 +18,11 @@ Uri.parse('http://tu_direccion_ip:puerto/ruta/rest/create_user.php')
    ```bash
    flutter run
    ```
-   Esto iniciará la aplicación en el emulador o dispositivo conectado
+   Esto iniciará la aplicación en el emulador o dispositivo conectado, en el caso de tener problemas con agotmaineot de memoria usar :
 
+  ```bash
+   flutter run --enable-software-rendering
+   ```
 
 ### Dependencias Utilizadas
 
@@ -28,3 +33,10 @@ Uri.parse('http://tu_direccion_ip:puerto/ruta/rest/create_user.php')
 - [flutter_keyboard_visibility](https://pub.dev/packages/flutter_keyboard_visibility) (versión: ^5.0.3): Para gestionar la visibilidad del teclado en Flutter.
 - [provider](https://pub.dev/packages/provider) (versión: ^6.1.1): Para la gestión de estados en Flutter.
 - [shared_preferences](https://pub.dev/packages/shared_preferences) (versión: ^2.0.8): Para el almacenamiento persistente de datos simples en Flutter.
+
+### Capturas del Funcionamiento
+
+1. **Instalar Dependencias**
+![Formulario de Creación de Usuario](images/imagen1.png)
+
+
