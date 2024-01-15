@@ -38,6 +38,14 @@
 
 #### Registro
 
+Para registrarte en la aplicacion, debes completar la siguiente información:
+
+- **Nombre:** [Tu Nombre]
+- **Apellido:** [Tu Apellido]
+- **Teléfono:** [Tu Número de Teléfono]
+- **Email:** [Tu Dirección de Email]
+- **Contraseña:** [Tu Contraseña]
+
 ![Formulario de Creación de Usuario](/images/imagen1.png)
 
 
