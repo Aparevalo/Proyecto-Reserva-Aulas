@@ -1,7 +1,7 @@
 if('serviceWorker' in navigator){
     navigator.serviceWorker
     // give complete path of sw.js file
-    .register('http://localhost/offline-app/sw.js')
+    .register('/sw.js')
     .then(() => console.log('Service Worker Registered'))
 }
 
