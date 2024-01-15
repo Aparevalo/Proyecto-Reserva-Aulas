@@ -22,4 +22,4 @@
 
 1. Instala un cliente MySQL, como [phpMyAdmin](https://www.phpmyadmin.net/) o [MySQL Workbench](https://www.mysql.com/products/workbench/).
 
-2. Importa el archivo SQL ubicado en `api/config/sql` [sql.sq](src/config/db_config.php) en tu cliente MySQL. Este archivo contiene la estructura de la base de datos necesaria para el proyecto.
+2. Importa el archivo SQL ubicado en `api/config/sql` [sql.sql](src/config/db_config.php) en tu cliente MySQL. Este archivo contiene la estructura de la base de datos necesaria para el proyecto.
