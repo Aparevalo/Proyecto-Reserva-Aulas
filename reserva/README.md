@@ -36,7 +36,8 @@ Uri.parse('http://tu_direccion_ip:puerto/ruta/rest/create_user.php')
 
 ### Capturas del Funcionamiento
 
-1. **Instalar Dependencias**
+#### Registro
+
 ![Formulario de Creación de Usuario](/images/imagen1.png)
 
 
