@@ -38,7 +38,7 @@
 
 ### Registro
 
-[Aulas](https://github.com/Aparevalo/Proyecto-Reserva-Aulas.git/blob/daddy/README.md)
+[Aulas](https://github.com/Aparevalo/Proyecto-Reserva-Aulas/tree/daddy/README.md)
 
 
 Para registrarte en la aplicacion, debes completar la siguiente información:
