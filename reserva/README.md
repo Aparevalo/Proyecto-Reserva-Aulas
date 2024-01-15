@@ -9,9 +9,9 @@
 2. **Ajuste de la URL**
     Asegúrate de tener un servidor PHP en tu máquina y ajusta la URL en los archivos [`createUserRest.dart`](lib/rest/createUserRest.dart) y [`loginRest.dart`](lib/rest/loginRest.dart), alojados en la carpeta [`lib/rest/`](lib/rest/)  a la dirección del servidor donde se encuentra el script PHP. Como se muestra a continuación:
 
-```dart
-Uri.parse('http://tu_direccion_ip:puerto/ruta/rest/create_user.php')
-```
+    ```dart
+    Uri.parse('http://tu_direccion_ip:puerto/ruta/rest/create_user.php')
+    ```
 
 
 2. **Ejecutar la Aplicación**
