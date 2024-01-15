@@ -1,49 +1,49 @@
-# Instrucciones para Levantar el Proyecto
+# Requerimientos del Sistema
 
-Este proyecto es una aplicación Flutter para Reserva de aulas mediante una solicitud HTTP a un API REST alojada en un servidor. A continuación, se proporcionan los pasos y comandos para levantar este proyecto, junto con las dependencias que está utilizando.
+## Introducción
 
-## Requisitos Previos
+El sistema tiene como objetivo principal proporcionar un entorno seguro y eficiente para la gestión de usuarios mediante un sistema de registro y login, siguiendo las normas [ISO 27001](https://www.iso.org/standard/54534.html), [ISO 27002](https://www.iso.org/standard/54533.html) y [ISO 9001](https://www.iso.org/standard/62085.html). Además, se destacará la importancia de la seguridad de cifrado de datos para proteger la información sensible.
 
-- Asegúrate de tener [Flutter](https://flutter.dev/docs/get-started/install) instalado en tu máquina.
-- Asegúrate de tener un editor de código compatible con Flutter, como [Visual Studio Code](https://code.visualstudio.com/) con el complemento Flutter instalado.
+## Requerimientos Funcionales
 
-Se recomienda utilizar uno de los siguientes servidores para ejecutar el servidor PHP y MySQL necesario para este proyecto:
+### Registro de Usuarios
 
-- [WampServer](https://www.wampserver.com/): WampServer es una plataforma para Windows que proporciona un entorno de desarrollo web fácil de instalar y configurar. Incluye Apache, PHP y MySQL preconfigurados.
+1. **RF-01:** Los usuarios deben tener la capacidad de registrarse proporcionando información básica, incluyendo nombre, dirección de correo electrónico y contraseña, cumpliendo con los requisitos de seguridad de la norma [ISO 27001](https://www.iso.org/standard/54534.html).
 
-- [XAMPP](https://www.apachefriends.org/index.html): XAMPP es una solución multiplataforma que incluye Apache, MariaDB (equivalente a MySQL), PHP y Perl. Está disponible para Windows, macOS y Linux.
+2. **RF-02:** Se deberá enviar un correo electrónico de verificación para confirmar la autenticidad del usuario durante el proceso de registro, siguiendo las directrices de la norma [ISO 27002](https://www.iso.org/standard/54533.html).
 
-Estos servidores simplifican la configuración del entorno de desarrollo y facilitan la ejecución del servidor PHP y MySQL en tu máquina.
+3. **RF-03:** El sistema debe permitir a los usuarios recuperar su contraseña mediante un proceso seguro de restablecimiento de contraseña, alineándose con los controles de seguridad de la norma [ISO 27002](https://www.iso.org/standard/54533.html).
 
-## Pasos para Levantar el Proyecto
+### Login
 
-1. **Clonar el Repositorio**
-   ```bash
-   git clone https://github.com/Aparevalo/Proyecto-Reserva-Aulas.git
-   ```
+4. **RF-04:** Los usuarios deberán autenticarse con éxito antes de acceder a las funcionalidades del sistema, cumpliendo con los requisitos de autenticación de la norma [ISO 27001](https://www.iso.org/standard/54534.html).
 
-2. **Ejecutar el Servidor PHP**
+5. **RF-05:** Se implementará un mecanismo de bloqueo de cuenta temporal después de un número definido de intentos de inicio de sesión fallidos para prevenir ataques de fuerza bruta, según las mejores prácticas de seguridad de la norma [ISO 27001](https://www.iso.org/standard/54534.html).
 
-   Configura el servidor PHP con los cambios mencionados en el [`README.md`](/API/README.md) de la carpeta de [`API`](API/).
-   
+## Requerimientos No Funcionales
 
-3. **Ejecutar el Servidor FLutter**
-   
-   Asegúrate de que tu servidor PHP esté en ejecución y configura el servidor Flutter con los cambios mencionados en el [`README.md`](reserva/README.md) de la carpeta de [`reserva`](reserva/).
+### Seguridad
 
+6. **RNF-01:** La comunicación entre el cliente y el servidor deberá estar cifrada utilizando el protocolo HTTPS para garantizar la confidencialidad de los datos, conforme a la norma [ISO 27001](https://www.iso.org/standard/54534.html).
 
-¡Ahora deberías tener tanto la aplicación Flutter como el servidor PHP en funcionamiento! Puedes utilizar el formulario en la aplicación para crear nuevos usuarios, y la información se almacenará en la base de datos configurada.
+7. **RNF-02:** Todas las contraseñas deben almacenarse de manera segura utilizando técnicas de hashing robustas, en cumplimiento con los controles de seguridad de la norma [ISO 27002](https://www.iso.org/standard/54533.html).
 
-## Capturas de Pantalla
+8. **RNF-03:** Se implementará una política de expiración de sesiones para cerrar automáticamente las sesiones inactivas, siguiendo las directrices de gestión de riesgos de la norma [ISO 27005](https://www.iso.org/standard/68412.html).
 
-### Formulario de Creación de Usuario
-![Formulario de Creación de Usuario](images/imagen1.png)
+### Usabilidad
 
-### Respuesta de Flutter
-![Respuesta Flutter](images/imagen2.png)
+9. **RNF-04:** La interfaz de usuario debe ser intuitiva y fácil de usar, facilitando la navegación y comprensión del sistema, de acuerdo con los principios de calidad de la norma [ISO 9001](https://www.iso.org/standard/62085.html).
 
-### Base de Datos 
-1. Persona
-![Persona](images/imagen3.png)
-2. Usuario
-![Usuario](images/imagen4.png)
+10. **RNF-05:** Se proporcionará retroalimentación clara al usuario durante el proceso de registro y login, cumpliendo con los estándares de usabilidad de la norma [ISO 25010](https://www.iso.org/standard/35733.html).
+
+### Rendimiento
+
+11. **RNF-06:** El sistema debe ser capaz de manejar de manera eficiente un volumen esperado de usuarios simultáneos durante las horas pico, conforme a los requisitos de rendimiento de la norma [ISO 25010](https://www.iso.org/standard/35733.html).
+
+12. **RNF-07:** Se implementarán técnicas de almacenamiento en caché para optimizar el rendimiento del sistema, siguiendo las mejores prácticas de la norma [ISO 25010](https://www.iso.org/standard/35733.html).
+
+### Escalabilidad
+
+13. **RNF-08:** El sistema debe ser escalable para adaptarse al crecimiento futuro del número de usuarios, alineándose con los principios de gestión del riesgo de la norma [ISO 31000](https://www.iso.org/standard/65694.html).
+
+Este documento proporciona una visión general de los requerimientos funcionales y no funcionales del sistema, teniendo en cuenta las normas ISO mencionadas, lo que contribuirá a desarrollar un sistema robusto y seguro.
