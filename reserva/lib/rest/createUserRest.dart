@@ -11,6 +11,7 @@ class UserController {
     final response = await http.post(
       Uri.parse('http://192.168.1.12:80/prueba_flutter/src/rest/createUser.php'),
       body: user.toJson(),
+      
     );
 
     if (response.statusCode == 200) {
