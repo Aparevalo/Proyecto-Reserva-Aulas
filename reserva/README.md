@@ -34,9 +34,12 @@
 - [provider](https://pub.dev/packages/provider) (versión: ^6.1.1): Para la gestión de estados en Flutter.
 - [shared_preferences](https://pub.dev/packages/shared_preferences) (versión: ^2.0.8): Para el almacenamiento persistente de datos simples en Flutter.
 
-## Capturas del Funcionamiento
+## Funcinamiento de los Modulos
 
 ### Registro
+
+[Aulas](https://github.com/Aparevalo/Proyecto-Reserva-Aulas.git/blob/daddy/README.md)
+
 
 Para registrarte en la aplicacion, debes completar la siguiente información:
 
