@@ -53,28 +53,6 @@ Se recomienda utilizar uno de los siguientes servidores para ejecutar el servido
 
 Estos servidores simplifican la configuración del entorno de desarrollo y facilitan la ejecución del servidor PHP y MySQL en tu máquina.
 
-#### Configuración del Servidor PHP
-
-1. Abre el archivo `api/config/config.php` en tu editor de texto.
-
-2. Modifica el contenido del archivo con la información de tu servidor MySQL:
-   ```php
-   <?php
-
-   define( 'DB_HOST', 'localhost' ); 
-   define( 'DB_USER', 'root' ); 
-   define( 'DB_PASS', '' );             
-   define( 'DB_NAME', 'prueba_flutter' );      
-
-   ?>
-   ```
-   Asegúrate de reemplazar `tu_servidor_mysql`, `tu_usuario_mysql` y `tu_contraseña_mysql`con la información correcta de tu entorno.
-
-#### Configuración de la Base de Datos
-
-1. Instala un cliente MySQL, como [phpMyAdmin](https://www.phpmyadmin.net/) o [MySQL Workbench](https://www.mysql.com/products/workbench/).
-
-2. Importa el archivo SQL ubicado en `api/config/sql` en tu cliente MySQL. Este archivo contiene la estructura de la base de datos necesaria para el proyecto.
 
 
 ¡Ahora deberías tener tanto la aplicación Flutter como el servidor PHP en funcionamiento! Puedes utilizar el formulario en la aplicación para crear nuevos usuarios, y la información se almacenará en la base de datos configurada.
