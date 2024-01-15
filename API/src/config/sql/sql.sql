@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS Usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email varchar(255) NOT NULL UNIQUE,
     contrasena VARCHAR(255) NOT NULL,
-    salt VARCHAR(20) NOT NULL,
+    salt VARCHAR(32) NOT NULL,
 	nivel VARCHAR(10) NOT NULL,
 	id_persona INT UNIQUE,
     FOREIGN KEY (id_persona) REFERENCES personas(id)
