@@ -24,12 +24,12 @@ Estos servidores simplifican la configuración del entorno de desarrollo y facil
 
 2. **Ejecutar el Servidor PHP**
 
-Configura el servidor PHP con los cambios mencionados en el [`README.md`](/API/README.md) de la carpeta de [`API`](API/).
+   Configura el servidor PHP con los cambios mencionados en el [`README.md`](/API/README.md) de la carpeta de [`API`](API/).
    
 
-2. **Ejecutar el Servidor FLutter**
+3. **Ejecutar el Servidor FLutter**
    
-Asegúrate de que tu servidor PHP esté en ejecución y configura el servidor Flutter con los cambios mencionados en el [`README.md`](reserva/README.md) de la carpeta de [`reserva`](reserva/).
+   Asegúrate de que tu servidor PHP esté en ejecución y configura el servidor Flutter con los cambios mencionados en el [`README.md`](reserva/README.md) de la carpeta de [`reserva`](reserva/).
 
 
 ¡Ahora deberías tener tanto la aplicación Flutter como el servidor PHP en funcionamiento! Puedes utilizar el formulario en la aplicación para crear nuevos usuarios, y la información se almacenará en la base de datos configurada.
