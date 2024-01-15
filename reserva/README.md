@@ -20,9 +20,9 @@
    ```
    Esto iniciará la aplicación en el emulador o dispositivo conectado, en el caso de tener problemas con agotamiento de memoria usar :
 
-  ```bash
-   flutter run --enable-software-rendering
-   ```
+    ```bash
+    flutter run --enable-software-rendering
+    ```
 
 ### Dependencias Utilizadas
 
