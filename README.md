@@ -48,6 +48,4 @@ El sistema tiene como objetivo principal proporcionar un entorno seguro y eficie
 
 ## Funcionamiento del Servidor PHP
 
-En esta clase PHP llamada `Persona`, se define una entidad que representa a una persona con propiedades privadas como `$nombre`, `$apellido`, `$telefono`, y `$rol`. El constructor `(__construct)` se encarga de inicializar estas propiedades cuando se crea un objeto de la clase.
-
-Luego, se definen funciones para realizar operaciones SQL comunes, como inserción, actualización y eliminación de registros en una tabla llamada Personas. Además, hay funciones estáticas para obtener información específica de la base de datos, como obtener una persona por su ID o obtener todas las personas.
+Se puede revisar en el archivo [`README.md`](/API/README.md) de la carpeta de [`API`](API/).
