@@ -44,6 +44,32 @@ CREATE TABLE IF NOT EXISTS Sugerencias (
 	id_usuario INT UNIQUE,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
+----------------------------------------------------------------------------------------------------------------------------------
+-- Crear la tabla Reservas
+CREATE TABLE IF NOT EXISTS Reservas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    aula VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    fecha DATE NOT NULL,
+    horaInicio TIME NOT NULL,
+    horaFin TIME NOT NULL,
+    id_persona INT UNIQUE,
+    FOREIGN KEY (id_persona) REFERENCES personas(id)
+);
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-- Crear la tabla Carreras
+CREATE TABLE IF NOT EXISTS Carreras (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    horarios VARCHAR(255) NOT NULL
+    id_persona INT UNIQUE,
+    FOREIGN KEY (id_persona) REFERENCES personas(id)
+);
+
+
+);
 
 
 
