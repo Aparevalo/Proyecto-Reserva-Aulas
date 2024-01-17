@@ -47,6 +47,18 @@ CREATE TABLE IF NOT EXISTS Aulas (
     FOREIGN KEY (id_carrera) REFERENCES carreras(id)
 );
 
+-- Relacion de uno a muchos clase carrera
+
+CREATE TABLE IF NOT EXISTS materias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo varchar(255) NOT NULL UNIQUE,
+    nombre VARCHAR(255) NOT NULL,
+	id_carreras INT,
+
+    FOREIGN KEY (id_carrera) REFERENCES carreras(id)
+);
+
+
 -- Relacion muchos o muchos  materias-aulas 
 
 CREATE TABLE IF NOT EXISTS materiasAulas (

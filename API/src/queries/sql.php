@@ -1,6 +1,6 @@
 <?php
 
-	require_once '../modelo/persona.php';
+	require_once '../modelo/aulas.php';
 	require_once '../modelo/user.php';
 	
 
@@ -64,6 +64,53 @@
 		}
 	}
 
+
+
+
+
+	function verificarTelefono(mysqli $conn, $telefono) {
+		// Obtener el correo electrónico de la base de datos
+		$query = "SELECT telefono FROM personas WHERE telefono = '$telefono' LIMIT 1";
+		$result = $conn->query($query);
+
+		if ($result->num_rows > 0) {
+			// El telefono electrónico existe en la base de datos
+			return false;
+		} else {
+			// El telefono electrónico no existe en la base de datos
+			return true;
+		}
+	}
+	
+	
+	function crearUsuario(mysqli $conn, Persona $persona, $email, $hashedPassword, $salt) {
+		// Intentar ejecutar la consulta SQL para insertar la persona
+		if ($conn->query($persona->insert()) === TRUE) {
+			// Obtener el ID insertado
+			$insertedId = $conn->insert_id;
+
+			if ($insertedId > 0) {
+				// Código para crear un usuario
+				$usuario = new User($email, $hashedPassword, $salt, 'user', $insertedId);
+				$queryUsuario = $usuario->insert();
+
+				// Intentar ejecutar la consulta SQL para crear el usuario
+				if ($conn->query($queryUsuario)) {
+					
+					return true;
+				} else {
+					
+					return "Error al crear el usuario: " . $conn->error;
+				}
+			} else {
+				
+				return "Error al obtener el ID insertado: " . $conn->error;
+			}
+		} else {
+			
+			return "Error al insertar la persona: " . $conn->error;
+		}
+	}
 	
 	function verificarContrasena(mysqli $conn, $email, $password_ingresada) {
     // Obtener el "salt" y el hash de la base de datos usando el email
