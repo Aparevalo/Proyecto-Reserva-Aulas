@@ -46,4 +46,8 @@ El sistema tiene como objetivo principal proporcionar un entorno seguro y eficie
 
 13. **RNF-08:** El sistema debe ser escalable para adaptarse al crecimiento futuro del número de usuarios, alineándose con los principios de gestión del riesgo de la norma [ISO 31000](https://www.iso.org/standard/65694.html).
 
-Este documento proporciona una visión general de los requerimientos funcionales y no funcionales del sistema, teniendo en cuenta las normas ISO mencionadas, lo que contribuirá a desarrollar un sistema robusto y seguro.
+## Funcionamiento del Servidor PHP
+
+En esta clase PHP llamada `Persona`, se define una entidad que representa a una persona con propiedades privadas como `$nombre`, `$apellido`, `$telefono`, y `$rol`. El constructor `(__construct)` se encarga de inicializar estas propiedades cuando se crea un objeto de la clase.
+
+Luego, se definen funciones para realizar operaciones SQL comunes, como inserción, actualización y eliminación de registros en una tabla llamada Personas. Además, hay funciones estáticas para obtener información específica de la base de datos, como obtener una persona por su ID o obtener todas las personas.
