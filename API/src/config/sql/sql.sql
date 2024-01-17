@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS Aulas (
     id_materiasAulas INT,
 	id_carreras INT,
     FOREIGN KEY (id_materiasAulas) REFERENCES materiasAulas(id),
-    FOREIGN KEY (id_carrera) REFERENCES carreras(id)
+    FOREIGN KEY (id_carreras) REFERENCES carreras(id)
 );
 
 -- Relacion de uno a muchos clase carrera
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS materias (
     nombre VARCHAR(255) NOT NULL,
 	id_carreras INT,
 
-    FOREIGN KEY (id_carrera) REFERENCES carreras(id)
+    FOREIGN KEY (id_carreras) REFERENCES carreras(id)
 );
 
 
@@ -63,10 +63,10 @@ CREATE TABLE IF NOT EXISTS materias (
 
 CREATE TABLE IF NOT EXISTS materiasAulas (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_aula(255) INT,
+    id_aula INT,
     id_materias INT,
     FOREIGN KEY (id_aula) REFERENCES aulas(id)
-    FOREIGN KEY (id_materia) REFERENCES materias(id)
+    FOREIGN KEY (id_materias) REFERENCES materias(id)
 );
 
 
