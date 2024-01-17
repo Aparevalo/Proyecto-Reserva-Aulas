@@ -33,8 +33,7 @@ CREATE TABLE IF NOT EXISTS Usuarios (
 -- Insertar Usuarios
 INSERT INTO Usuarios (email, contrasena, salt, nivel, id_persona) VALUES ('admin@admin.com', MD5('admin'), '0', 'admin',1);
 INSERT INTO Usuarios (email, contrasena, salt, nivel, id_persona) VALUES ('user@user.com', MD5('user'), '0', 'user',2);
-
-
+>
 -- Crear la tabla Sugerencias
 -- Relacion Uno a Uno con tabla Usuarios
 CREATE TABLE IF NOT EXISTS Sugerencias (

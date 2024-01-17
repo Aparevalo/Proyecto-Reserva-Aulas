@@ -20,10 +20,10 @@ try {
 
     // Resto de la configuración del correo
     $mail->setFrom('and_are100@hotmail.es', 'Tu Nombre');
-    $mail->addAddress('ap761324@gmail.com', 'Anthonela');
+    $mail->addAddress('kepomacu@uide.edu.ec', 'Kevin');
 
-    $mail->Subject = 'Eres puta';
-    $mail->Body    = 'Mñana trabajas en el extasis';
+    $mail->Subject = 'Prueba Api';
+    $mail->Body    = 'Mñana trabajas';
 
     $mail->send();
     echo 'El correo ha sido enviado correctamente';
