@@ -34,6 +34,29 @@ CREATE TABLE IF NOT EXISTS Usuarios (
 INSERT INTO Usuarios (email, contrasena, salt, nivel, id_persona) VALUES ('admin@admin.com', MD5('admin'), '0', 'admin',1);
 INSERT INTO Usuarios (email, contrasena, salt, nivel, id_persona) VALUES ('user@user.com', MD5('user'), '0', 'user',2);
 
+-- Relacion muchos o muchos  materias 
+-- Relacion de uno a muchos carreras
+
+CREATE TABLE IF NOT EXISTS Aulas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo varchar(255) NOT NULL UNIQUE,
+    ubicacion VARCHAR(255) NOT NULL,
+    id_materiasAulas INT,
+	id_carreras INT,
+    FOREIGN KEY (id_materiasAulas) REFERENCES materiasAulas(id),
+    FOREIGN KEY (id_carrera) REFERENCES carreras(id)
+);
+
+-- Relacion muchos o muchos  materias-aulas 
+
+CREATE TABLE IF NOT EXISTS materiasAulas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_aula(255) INT,
+    id_materias INT,
+    FOREIGN KEY (id_aula) REFERENCES aulas(id)
+    FOREIGN KEY (id_materia) REFERENCES materias(id)
+);
+
 
 -- Crear la tabla Sugerencias
 -- Relacion Uno a Uno con tabla Usuarios
