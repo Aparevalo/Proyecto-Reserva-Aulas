@@ -1,7 +1,8 @@
 <?php
 
-require_once '../modelo/persona.php';
-require_once '../modelo/user.php';
+require_once '../modelo/aulas.php';
+require_once '../modelo/materias.php';
+require_once '../modelo/carreras.php';
 require_once '../modelo/conexionBD.php';
 require_once '../queries/sql.php';
 
@@ -21,7 +22,9 @@ if (isset($_POST['codigo']) && isset($_POST['ubicacion']) && isset($_POST['mater
 	
 
     // Crear el objeto Aula
+    
     $Aula = new Aula($codigo, $ubicacion, $materias, $carreras);
+    $Materia = new Materia($codigo, $nombre, $carreras);
 
     // Llamada a la función crearAula
     $resultado = crearAula($conn, $codigo, $ubicacion, $materias, $carreras);
