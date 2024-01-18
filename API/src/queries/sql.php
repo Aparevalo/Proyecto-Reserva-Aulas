@@ -166,7 +166,36 @@
 			return "Error al insertar la reserva: " . $conn->error;
 		}
 	}
+	#funcion crear carreras
 
+	function crearCarrera(mysqli $conn, $nombre, $profesores, $horarios) {
+		try {
+			// Validar datos
+			if (empty($nombre) || empty($profesores) || empty($horarios)) {
+				throw new Exception("Datos de carrera incompletos.");
+			}
+	
+			// Crear objeto Carrera
+			$carrera = new Carrera($nombre, $profesores, $horarios);
+	
+			// Iniciar transacción y ejecutar consulta
+			$conn->begin_transaction();
+			$queryCarrera = $carrera->insert();
+	
+			if ($conn->query($queryCarrera)) {
+				$conn->commit();
+				return true;
+			} else {
+				throw new Exception("Error al crear la carrera: " . $conn->error);
+			}
+		} catch (Exception $e) {
+			// Rollback en caso de error
+			$conn->rollback();
+			return "Error: " . $e->getMessage();
+		}
+	}
+	
+	
 	
 
 
