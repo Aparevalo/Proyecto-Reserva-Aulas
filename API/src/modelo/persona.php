@@ -15,7 +15,7 @@ class Persona {
 	
     }
 
-
+	
 	/*Funciones SQL*/
 
 	public function insert() {

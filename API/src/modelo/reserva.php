@@ -15,6 +15,57 @@ class Reserva {
         $this->horaInicio = $horaInicio;
         $this->horaFin = $horaFin;
     }
+// Métodos Get
+public function getAula() {
+    return $this->aula;
+}
+
+public function getProfesor() {
+    return $this->profesor;
+}
+
+public function getEmail() {
+    return $this->email;
+}
+
+public function getFecha() {
+    return $this->fecha;
+}
+
+public function getHoraInicio() {
+    return $this->horaInicio;
+}
+
+public function getHoraFin() {
+    return $this->horaFin;
+}
+
+// Métodos Set
+public function setAula($aula) {
+    $this->aula = $aula;
+}
+
+public function setProfesor($profesor) {
+    $this->profesor = $profesor;
+}
+
+public function setEmail($email) {
+    $this->email = $email;
+}
+
+public function setFecha($fecha) {
+    $this->fecha = $fecha;
+}
+
+public function setHoraInicio($horaInicio) {
+    $this->horaInicio = $horaInicio;
+}
+
+public function setHoraFin($horaFin) {
+    $this->horaFin = $horaFin;
+}
+
+
 
     /* Funciones SQL */
 

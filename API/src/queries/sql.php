@@ -2,6 +2,8 @@
 
 	require_once '../modelo/persona.php';
 	require_once '../modelo/user.php';
+	require_once '../modelo/carreras.php';
+	require_once '../modelo/reserva.php';
 	
 
 	
@@ -37,7 +39,7 @@
 	
 	function crearUsuario(mysqli $conn, Persona $persona, $email, $hashedPassword, $salt) {
 		// Intentar ejecutar la consulta SQL para insertar la persona
-		if ($conn->query($persona->insert()) === TRUE) {
+		if ($conn->query($persona->insert())) {
 			// Obtener el ID insertado
 			$insertedId = $conn->insert_id;
 
@@ -90,8 +92,85 @@
     }
 	
 	}
+
+	function buscarIdProfesor(mysqli $conn, $email){
+
+		$query = "SELECT id,email FROM usuarios WHERE email = '$email' LIMIT 1";
+		$result = $conn->query($query);
+
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+        	$idUser = $row['id'];
+			return $idUser;
+		} else {
+			// El correo electrónico no existe en la base de datos
+			return false;
+		}
+	}
+	funtion buscarIdAula(mysqli $conn, $codigo){
+		
+		$query = "SELECT id FROM aulas WHERE id = '$codigo' LIMIT 1";
+		
+		$result = $conn->query($query);
+		
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+        	$codigo = $row['id'];
+			return $codigo;
+		} else{
+			// El codigo de aula  no existe en la base de datos
+			return false;
+		}
+		
+	}
+	function buscarIdCarrera(mysqli $conn, $idCarrera){	
+		
+		$query = "SELECT id FROM carreras WHERE id = '$idCarrera' LIMIT 1";
+		
+		$result = $conn->query($query);
+		
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+        	$idCarrera = $row['id'];
+			return $idCarrera;
+		}else{
+			//el id de carrera no existe en la base de datos
+			return false;
+		}
+		
+	}
+
+
+	#funcion crear reservas
 	
+	function crearReserva(mysqli $conn,$idAula, $idProfesor,$email,  $fecha, $horaInicio, $horaFin)  {
 	
+		if ($conn->query($profesor->getById($idProfesor))&& $conn->query($aula->getById($idAula)) ) {
+			// Obtener el ID insertado
+			
+				// Código para crear un usuario
+				$reserva = new Reserva($aula, $profesor, $email,  $fecha, $horaInicio, $horaFin);
+				$queryreserva  = $reserva->insert();
+
+				// Intentar ejecutar la consulta SQL para crear el usuario
+				if ($conn->query($queryreserva)) {
+					
+					return true;
+				} else {
+					
+					return "Error al crear la reserva: " . $conn->error;
+				}
+
+		} else {
+			
+			return "Error al insertar la reserva: " . $conn->error;
+		}
+	}
+
+	
+
+
+
 	
 	 
 	

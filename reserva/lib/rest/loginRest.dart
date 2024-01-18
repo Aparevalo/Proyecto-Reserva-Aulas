@@ -18,7 +18,7 @@ class AuthService {
   Future<bool> verificarCorreo(String correo) async {
     final response = await http.post(
       Uri.parse(
-          'http://192.168.1.16:80/prueba_flutter/src/rest/verificarCorreo.php'),
+          'http://172.16.77.114:80/prueba_flutter/src/rest/verificarCorreo.php'),
       body: {'email': correo},
     );
 
@@ -32,7 +32,7 @@ class AuthService {
   Future<bool> verificarContrasena(UserModel user) async {
     final response = await http.post(
       Uri.parse(
-          'http://192.168.1.16:80/prueba_flutter/src/rest/verificarContrasena.php'),
+          'http://172.16.77.114:80/prueba_flutter/src/rest/verificarContrasena.php'),
       body: user.toJson(),
     );
 
