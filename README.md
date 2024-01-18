@@ -39,11 +39,9 @@ Estos servidores simplifican la configuración del entorno de desarrollo y facil
 ### Formulario de Creación de Usuario
 ![Formulario de Creación de Usuario](images/imagen1.png)
 
-### Respuesta de Flutter
-![Respuesta Flutter](images/imagen2.png)
+### Formulario de Login de Usuario
+![Formulario de Creación de Usuario](images/imagen2.png)
 
-### Base de Datos 
-1. Persona
-![Persona](images/imagen3.png)
-2. Usuario
-![Usuario](images/imagen4.png)
+### Pantalla de Bienvenida Logueado
+![Respuesta Flutter](images/imagen3.png)
+
