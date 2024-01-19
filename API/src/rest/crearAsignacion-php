@@ -1,0 +1,42 @@
+<?php
+
+require_once '../modelo/asignacion.php';  // Asegúrate de tener el archivo correspondiente para la clase Asignacion
+require_once '../modelo/conexionBD.php';
+require_once '../queries/sql.php';
+
+// Verificar si se han recibido los datos del formulario
+if (
+    isset($_POST['profesor']) && 
+    isset($_POST['materia']) && 
+    isset($_POST['hora_inicio']) && 
+    isset($_POST['hora_fin']) && 
+    isset($_POST['aula'])
+) {
+    // Crear una instancia de la clase conexionBD
+    $db = new conexionBD();
+    $conn = $db->get_con();
+    
+    // Filtrar y escapar las variables de entrada
+    $profesor = $conn->real_escape_string($_POST['profesor']);
+    $materia = $conn->real_escape_string($_POST['materia']);
+    $hora_inicio = $conn->real_escape_string($_POST['hora_inicio']);
+    $hora_fin = $conn->real_escape_string($_POST['hora_fin']);
+    $aula = $conn->real_escape_string($_POST['aula']);
+
+    // Crear el objeto Asignacion
+    $asignacion = new Asignacion($profesor, $materia, $hora_inicio, $hora_fin, $aula);
+
+    // Llamada a la función crearAsignacion
+    $resultado = crearAsignacion($conn, $asignacion);
+    
+    if ($resultado) {
+        echo json_encode(true);
+    } else {
+        echo json_encode(false);
+    }
+    
+    // Desconectarse de la base de datos
+    $db->dbDisconnect();
+}
+
+?>
